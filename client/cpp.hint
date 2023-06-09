@@ -1,0 +1,4 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define DEFINE_DATA_ACCESSOR(PROPERTY_NAME, PROPERTY_TYPE, DATA_OFFSET, PROPERTY_OFFSET) inline PROPERTY_TYPE PROPERTY_NAME() { uintptr_t dataStore = *reinterpret_cast<uintptr_t*>(reinterpret_cast<uintptr_t>(this) + DATA_OFFSET); return *reinterpret_cast<PROPERTY_TYPE*>(dataStore + PROPERTY_OFFSET); }
